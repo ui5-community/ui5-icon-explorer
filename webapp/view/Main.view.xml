@@ -4,26 +4,37 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
+    xmlns:grid="sap.ui.layout.cssgrid"
     xmlns:f="sap.f"
 >
     <Page>
         <customHeader>
-            <core:Fragment fragmentName="de.kernich.icon.preview.view.fragments.Header" type="XML" />
+            <core:Fragment
+                fragmentName="de.kernich.icon.preview.view.fragments.Header"
+                type="XML"
+            />
         </customHeader>
         <content>
             <f:SidePanel id="IdSidePanel">
                 <f:mainContent>
                     <f:GridList
                         items="{
-							path: 'icons>/',
-							sorter: {
-								path: 'fav',
-								descending: true
-							}
-						}"
+                            path: 'icons>/',
+                            sorter: {
+                                path: 'fav',
+                                descending: true
+                            }
+                        }"
                         id="IdGridList"
                         updateFinished=".onUpdateFinished"
+                        noDataText="No icons found"
                     >
+                        <f:customLayout>
+                            <grid:GridBasicLayout
+                                gridTemplateColumns="repeat(7, 1fr)"
+                                gridGap="0.5rem"
+                            />
+                        </f:customLayout>
                         <f:GridListItem
                             type="Active"
                             press=".onIconPress"
@@ -42,21 +53,19 @@
                                     wrapping="false"
                                 />
                                 <HBox>
-                                    <Label
-                                        text="{
-										path: 'icons>collection',
-											formatter: '.formatter.formatCollectionName'
-										}"
-                                    />
+                                    <Label text="{
+                                        path: 'icons>collection',
+                                        formatter: '.formatter.formatCollectionName'
+                                    }" />
                                 </HBox>
                                 <HBox>
                                     <Button
                                         icon="{
-											path: 'icons>fav',
-											formatter: '.formatter.formatFavIcon'
-										}"
+                                            path: 'icons>fav',
+                                            formatter: '.formatter.formatFavIcon'
+                                        }"
                                         type="Transparent"
-										press=".onToggleIconFav"
+                                        press=".onToggleIconFav"
                                     />
                                     <Button
                                         icon="sap-icon://copy"
@@ -69,7 +78,10 @@
                     </f:GridList>
                 </f:mainContent>
                 <f:items>
-                   <core:Fragment fragmentName="de.kernich.icon.preview.view.fragments.Sidebar" type="XML" />
+                    <core:Fragment
+                        fragmentName="de.kernich.icon.preview.view.fragments.Sidebar"
+                        type="XML"
+                    />
                 </f:items>
             </f:SidePanel>
         </content>

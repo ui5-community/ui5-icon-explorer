@@ -2,7 +2,7 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
 >
-    <Toolbar>
+    <OverflowToolbar>
         <core:Icon
             src="sap-icon://fa-brands/font-awesome"
             size="1.5rem"
@@ -60,5 +60,5 @@
                 />
             </items>
         </SegmentedButton>
-    </Toolbar>
+    </OverflowToolbar>
 </core:FragmentDefinition>
