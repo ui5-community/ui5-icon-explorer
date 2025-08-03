@@ -34,4 +34,3 @@ jobs:
         user: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
         localDir: dist
-        remoteDir: ui5-fontawesome-lib
