@@ -62,7 +62,7 @@ export default class Main extends Controller {
 		let retries = 0;
 
 		const checkLibraryLoaded = async () => {
-			if (Lib.isLoaded("fontawesome.icons.lib")) {
+			if (Lib.isLoaded("fontawesome.icons.lib") && IconPool.getIconCollectionNames().includes("fa-solid")) {
 				this.initData();
 			} else if (retries < maxRetries) {
 				await new Promise(resolve => setTimeout(resolve, retryDelay));
