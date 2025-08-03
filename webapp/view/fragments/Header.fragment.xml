@@ -12,16 +12,17 @@
         <ToolbarSpacer />
         <SearchField
             placeholder="Find icons..."
-            width="400px"
+            width="350px"
             liveChange=".onSearchChange"
             value="{viewData>/search}"
         />
         <ToolbarSpacer />
         <Label text="Theme:" />
         <Select
-            class="sapUiSmallMarginEnd"
+            class="sapUiTinyMarginEnd"
             selectedKey="{viewData>/selectedTheme}"
             change=".onThemeChange"
+            width="120px"
         >
             <items>
                 <core:Item
@@ -46,7 +47,7 @@
         <SegmentedButton
             items="{collections>/}"
             selectedKey="{viewData>/selectedCollection}"
-            width="450px"
+            width="430px"
             selectionChange=".onCollectionChange"
         >
             <items>
