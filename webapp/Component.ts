@@ -1,5 +1,3 @@
-import Core from "sap/ui/core/Core";
-import Lib from "sap/ui/core/Lib";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
