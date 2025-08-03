@@ -21,18 +21,17 @@
 		"@openui5/types": "^1.138.0",
 		"@ui5/cli": "latest",
 		"@ui5/linter": "latest",
-		"babel-plugin-istanbul": "^7.0.0",
 		"eslint": "^9.12.0",
 		"globals": "^15.11.0",
 		"rimraf": "latest",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.8.1",
-		"ui5-middleware-livereload": "^3.1.0",
-		"ui5-middleware-servestatic": "^3.3.1",
-		"ui5-test-runner": "^5.4.3",
-		"ui5-tooling-modules": "^3.29.1",
-		"ui5-tooling-transpile": "^3.5.0"
+		"ui5-middleware-livereload": "latest",
+		"ui5-middleware-servestatic": "latest",
+		"ui5-test-runner": "latest",
+		"ui5-tooling-modules": "latest",
+		"ui5-tooling-transpile": "latest"
 	},
 	"dependencies": {
 		"ui5-fontawesome-lib": "^1.0.0"
