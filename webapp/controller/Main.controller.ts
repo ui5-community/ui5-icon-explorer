@@ -57,6 +57,9 @@ export default class Main extends Controller {
 	}
 
 	private initAsync(): void {
+		this.getView().setBusyIndicatorDelay(0);
+		this.getView().setBusy(true);
+
 		const maxRetries = 20;
 		const retryDelay = 500;
 		let retries = 0;
@@ -64,6 +67,7 @@ export default class Main extends Controller {
 		const checkLibraryLoaded = async () => {
 			if (Lib.isLoaded("fontawesome.icons.lib") && IconPool.getIconCollectionNames().includes("fa-solid")) {
 				this.initData();
+				this.getView().setBusy(false);
 			} else if (retries < maxRetries) {
 				await new Promise(resolve => setTimeout(resolve, retryDelay));
 				retries++;
