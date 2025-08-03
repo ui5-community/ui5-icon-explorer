@@ -4,27 +4,198 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-	core:require="{
-		formatter: 'de/kernich/icon/preview/model/formatter'
-	}">
-
-	<Page
-		title="{i18n>appTitle}"
-		id="page">
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.f"
+>
+	<Page>
+		<customHeader>
+			<Toolbar>
+				<core:Icon src="sap-icon://fa-brands/font-awesome" size="1.5rem" />
+				<Title text="Extended Icon Explorer" />
+				<Label text="{viewData>/count} Icons" />
+				<ToolbarSpacer />
+				<SearchField
+					placeholder="Find icons..."
+					width="400px"
+					liveChange="onSearchChange"
+					value="{viewData>/search}"
+				/>
+				<ToolbarSpacer />
+				<Label text="Theme:" />
+				<Select
+					class="sapUiSmallMarginEnd"
+					selectedKey="{viewData>/selectedTheme}"
+					change="onThemeChange"
+				>
+					<items>
+						<core:Item
+							key="sap_horizon"
+							text="Light"
+						/>
+						<core:Item
+							key="sap_horizon_dark"
+							text="Dark"
+						/>
+						<core:Item
+							key="sap_horizon_hcb"
+							text="High Contrast Black"
+						/>
+						<core:Item
+							key="sap_horizon_hcw"
+							text="High Contrast White"
+						/>
+					</items>
+				</Select>
+				<Label text="Collection:" />
+				<SegmentedButton
+					items="{collections>/}"
+					selectedKey="{viewData>/selectedCollection}"
+					width="450px"
+					selectionChange="onCollectionChange"
+				>
+					<items>
+						<SegmentedButtonItem
+							text="{
+								path: 'collections>name',
+								formatter: '.formatter.formatCollectionName'
+							}"
+							key="{collections>key}"
+						/>
+					</items>
+				</SegmentedButton>
+			</Toolbar>
+		</customHeader>
 		<content>
-			<IllustratedMessage
-				title="{i18n>appTitle}"
-				illustrationType="sapIllus-SuccessHighFive"
-				enableVerticalResponsiveness="true"
-				description="{i18n>appDescription}">
-				<additionalContent>
-					<Button
-						id="helloButton"
-						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-						press="sayHello" />
-				</additionalContent>
-			</IllustratedMessage>
+			<f:SidePanel id="IdSidePanel">
+				<f:mainContent>
+					<f:GridList
+						items="{icons>/}"
+						id="IdGridList"
+					>
+					<!--					<f:customLayout>
+						<grid:GridBoxLayout boxesPerRowConfig="XL12 L12 M12 S12" />
+					</f:customLayout>-->
+
+						<f:GridListItem
+							type="Active"
+							press="onIconPress"
+						>
+							<VBox
+								alignItems="Center"
+								alignContent="Stretch"
+								class="sapUiSmallMarginTop sapUiTinyMarginBottom"
+							>
+								<core:Icon
+									src="{icons>src}"
+									size="2.5rem"
+									decorative="true"
+									class="sapUiTinyMarginBottom"
+								/>
+								<Text text="{icons>icon}" wrapping="false" />
+								<HBox>
+									<Label text="{
+										path: 'icons>collection',
+										formatter: '.formatter.formatCollectionName'
+									}" />
+								</HBox>
+								<HBox>
+									<Button icon="sap-icon://fa-regular/star" type="Transparent" />
+									<Button icon="sap-icon://copy" type="Transparent" press="onCopyIconFromSidePanel" />
+								</HBox>
+							</VBox>
+						</f:GridListItem>
+					</f:GridList>
+				</f:mainContent>
+				<f:items>
+					<f:SidePanelItem
+						icon="sap-icon://information"
+						text="Details"
+					>
+						<f:GridList visible="{= ${viewData>/selectedIcon/src} !== '' }">
+							<f:GridListItem>
+								<VBox
+									alignItems="Center"
+									class="sapUiSmallMargin"
+								>
+									<core:Icon
+										src="{viewData>/selectedIcon/src}"
+										size="5rem"
+										class="sapUiTinyMarginBottom"
+									/>
+									<Label text="{viewData>/selectedIcon/icon}" />
+								</VBox>
+							</f:GridListItem>
+							<f:GridListItem>
+								<VBox class="sapUiSmallMargin">
+									<Title text="Copy" />
+									<HBox renderType="Bare">
+										<Input
+											value="{viewData>/selectedIcon/src}"
+											editable="false"
+										/>
+										<Button
+											icon="sap-icon://copy"
+											type="Emphasized"
+											class="sapUiTinyMarginBegin"
+											press="onCopyIconFromSidePanel"
+										/>
+									</HBox>
+									<HBox renderType="Bare" >
+										<Input
+											value="{viewData>/selectedIcon/icon} (Symbol)"
+											editable="false"
+										/>
+										<Button
+											icon="sap-icon://copy"
+											type="Emphasized"
+											class="sapUiTinyMarginBegin"
+											press="onCopySymbolIconFromSidePanel"
+										/>
+									</HBox>
+								</VBox>
+							</f:GridListItem>
+							<f:GridListItem>
+								<VBox class="sapUiSmallMargin">
+									<Title text="Preview" />
+									<HBox justifyContent="SpaceAround">
+										<Button
+											icon="{viewData>/selectedIcon/src}"
+											type="Ghost"
+										/>
+										<Button
+											icon="{viewData>/selectedIcon/src}"
+											type="Success"
+										/>
+										<Button
+											icon="{viewData>/selectedIcon/src}"
+											type="Reject"
+										/>
+										<Button
+											icon="{viewData>/selectedIcon/src}"
+											type="Emphasized"
+										/>
+									</HBox>
+								</VBox>
+							</f:GridListItem>
+							<f:GridListItem>
+								<VBox class="sapUiSmallMargin">
+									<Title text="Additional Information" />
+									<HBox>
+										<Label
+											text="Collection:"
+											class="sapUiTinyMarginEnd"
+										/>
+										<Label text="{
+											path: 'viewData>/selectedIcon/collection',
+											formatter: '.formatter.formatCollectionName'
+										}" />
+									</HBox>
+								</VBox>
+							</f:GridListItem>
+						</f:GridList>
+					</f:SidePanelItem>
+				</f:items>
+			</f:SidePanel>
 		</content>
 	</Page>
-
 </mvc:View>

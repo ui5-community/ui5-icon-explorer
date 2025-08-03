@@ -12,10 +12,7 @@
 		"types": ["@openui5/types", "@types/qunit"],
 		"paths": {
 			"de/kernich/icon/preview/*": ["./webapp/*"],
-			"unit/*": ["./webapp/test/unit/*"],
-			"integration/*": ["./webapp/test/integration/*"]
 		}
 	},
-	"exclude": ["./webapp/test/e2e/**/*"],
 	"include": ["./webapp/**/*"]
 }
