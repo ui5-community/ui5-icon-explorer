@@ -1,0 +1,63 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Toolbar>
+        <core:Icon
+            src="sap-icon://fa-brands/font-awesome"
+            size="1.5rem"
+        />
+        <Title text="Extended Icon Explorer" />
+        <Label text="{viewData>/count} Icons" />
+        <ToolbarSpacer />
+        <SearchField
+            placeholder="Find icons..."
+            width="400px"
+            liveChange=".onSearchChange"
+            value="{viewData>/search}"
+        />
+        <ToolbarSpacer />
+        <Label text="Theme:" />
+        <Select
+            class="sapUiSmallMarginEnd"
+            selectedKey="{viewData>/selectedTheme}"
+            change=".onThemeChange"
+        >
+            <items>
+                <core:Item
+                    key="sap_horizon"
+                    text="Light"
+                />
+                <core:Item
+                    key="sap_horizon_dark"
+                    text="Dark"
+                />
+                <core:Item
+                    key="sap_horizon_hcb"
+                    text="High Contrast Black"
+                />
+                <core:Item
+                    key="sap_horizon_hcw"
+                    text="High Contrast White"
+                />
+            </items>
+        </Select>
+        <Label text="Collection:" />
+        <SegmentedButton
+            items="{collections>/}"
+            selectedKey="{viewData>/selectedCollection}"
+            width="450px"
+            selectionChange=".onCollectionChange"
+        >
+            <items>
+                <SegmentedButtonItem
+                    text="{
+                    path: 'collections>name',
+                    formatter: '.formatter.formatCollectionName'
+                }"
+                    key="{collections>key}"
+                />
+            </items>
+        </SegmentedButton>
+    </Toolbar>
+</core:FragmentDefinition>

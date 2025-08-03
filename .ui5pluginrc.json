@@ -1,0 +1,12 @@
+{
+	"ui5": {
+		"ui5parser": {
+			"ui5version": "1.138.0"
+		},
+		"ui5linter": {
+			"severity": {
+				"TagAttributeLinter": "Hint"
+			}
+		}
+	}
+}

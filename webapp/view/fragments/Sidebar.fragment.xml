@@ -1,0 +1,95 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+>
+    <f:SidePanelItem
+        icon="sap-icon://information"
+        text="Details"
+    >
+        <f:GridList visible="{= ${viewData>/selectedIcon/src} !== '' }">
+            <f:GridListItem>
+                <VBox
+                    alignItems="Center"
+                    class="sapUiSmallMargin"
+                >
+                    <core:Icon
+                        src="{viewData>/selectedIcon/src}"
+                        size="5rem"
+                        class="sapUiTinyMarginBottom"
+                    />
+                    <Label text="{viewData>/selectedIcon/icon}" />
+                </VBox>
+            </f:GridListItem>
+            <f:GridListItem>
+                <VBox class="sapUiSmallMargin">
+                    <Title text="Copy" />
+                    <HBox renderType="Bare">
+                        <Input
+                            value="{viewData>/selectedIcon/src}"
+                            editable="false"
+                        />
+                        <Button
+                            icon="sap-icon://copy"
+                            type="Emphasized"
+                            class="sapUiTinyMarginBegin"
+                            press=".onCopyIconFromSidePanel"
+                        />
+                    </HBox>
+                    <HBox renderType="Bare">
+                        <Input
+                            value="{viewData>/selectedIcon/icon} (Symbol)"
+                            editable="false"
+                        />
+                        <Button
+                            icon="sap-icon://copy"
+                            type="Emphasized"
+                            class="sapUiTinyMarginBegin"
+                            press=".onCopySymbolIconFromSidePanel"
+                        />
+                    </HBox>
+                </VBox>
+            </f:GridListItem>
+            <f:GridListItem>
+                <VBox class="sapUiSmallMargin">
+                    <Title text="Preview" />
+                    <HBox justifyContent="SpaceAround">
+                        <Button
+                            icon="{viewData>/selectedIcon/src}"
+                            type="Ghost"
+                        />
+                        <Button
+                            icon="{viewData>/selectedIcon/src}"
+                            type="Success"
+                        />
+                        <Button
+                            icon="{viewData>/selectedIcon/src}"
+                            type="Reject"
+                        />
+                        <Button
+                            icon="{viewData>/selectedIcon/src}"
+                            type="Emphasized"
+                        />
+                    </HBox>
+                </VBox>
+            </f:GridListItem>
+            <f:GridListItem>
+                <VBox class="sapUiSmallMargin">
+                    <Title text="Additional Information" />
+                    <HBox>
+                        <Label
+                            text="Collection:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <Label
+                            text="{
+                    path: 'viewData>/selectedIcon/collection',
+                    formatter: '.formatter.formatCollectionName'
+                }"
+                        />
+                    </HBox>
+                </VBox>
+            </f:GridListItem>
+        </f:GridList>
+    </f:SidePanelItem>
+</core:FragmentDefinition>

@@ -1,101 +1,63 @@
-# UI5 Application de.kernich.icon.preview
+# 🎨 UI5 Icon Explorer
 
-Insert the purpose of this project and some interesting info here...
+[![Build app](https://github.com/mariokernich/ui5-icon-explorer/workflows/Build%20app/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22Build+app%22)
+[![ESLint check](https://github.com/mariokernich/ui5-icon-explorer/workflows/ESLint%20check/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22ESLint+check%22)
+[![TypeScript check](https://github.com/mariokernich/ui5-icon-explorer/workflows/TypeScript%20check/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22TypeScript+check%22)
+[![UI5 Lint](https://github.com/mariokernich/ui5-icon-explorer/workflows/UI5%20Lint%20check/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22UI5+Lint%22)
+[![Font Awesome](https://img.shields.io/badge/FontAwesome-7.0.0-blue.svg)](https://fontawesome.com/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![UI5](https://img.shields.io/badge/UI5-Latest-orange.svg)](https://sapui5.hana.ondemand.com/)
 
-## Description
+> A powerful and modern icon explorer for SAPUI5 applications that extends the [ui5-icon-explorer](https://github.com/mariokernich/ui5-icon-explorer) with Font Awesome icons together with the built-in icons with the look and feel of the standard UI5 icon explorer of https://sapui5.hana.ondemand.com/sdk/iconExplorer.html.
 
-This app demonstrates a TypeScript setup for developing UI5 applications. The central entry point for all information about using TypeScript with UI5 is at [https://sap.github.io/ui5-typescript](https://sap.github.io/ui5-typescript).
+## ✨ Features
 
-**The template is inspired by the [`SAP-samples/ui5-typescript-helloworld`](https://github.com/SAP-samples/ui5-typescript-helloworld) project which also contains [a detailed step-by-step guide](https://github.com/SAP-samples/ui5-typescript-helloworld/blob/main/step-by-step.md). It explains how this setup is created and how all the bits and pieces fit together.**
+- 🔍 **Smart Search** - Find icons by name with instant results
+- 📋 **One-Click Copy** - Copy icon codes directly to clipboard
+- ⭐ **Favorites System** - Mark and organize your favorite icons
+- 🎨 **Theme Switching** - Toggle between light and dark themes
+- 📚 **Collection Filtering** - Filter by specific icon collections
+- 🔍 **Detailed View** - Comprehensive icon information and usage examples
+- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
 
-## Requirements
+## 🚀 Live Demo
 
-Either [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for dependency management.
+**[Try it online →](https://ie.kernich.de)**
 
-## Preparation
+![Screenshot](./screenshot.png)
 
-Use `npm` (or `yarn`) to install the dependencies:
+### Available Scripts
 
-```sh
-npm install
-```
+| Command              | Description                                                    |
+| -------------------- | -------------------------------------------------------------- |
+| `npm start`          | Start development server  |
+| `npm run build`      | Build the app for production                               |
+| `npm run check:ts`   | TypeScript type checking                                       |
+| `npm run check:lint` | ESLint code quality check                                      |
+| `npm run check:ui5`  | ui5lint check                                                  |
+| `npm run check:all`  | Run all code quality checks                                    |
+| `npm run fix:lint`   | Automatically fix lint issues if possible                      |
 
-(To use yarn, just do `yarn` instead.)
+## 🤝 Contributing
 
-## Run the App
+We welcome contributions! Please feel free to submit issues and pull requests.
 
-Execute the following command to run the app locally for development in watch mode (the browser reloads the app automatically when there are changes in the source code):
+### Development Workflow
 
-```sh
-npm start
-```
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-As shown in the terminal after executing this command, the app is then running on http://localhost:8080/index.html. A browser window with this URL should automatically open.
+## 📄 License
 
-(When using yarn, do `yarn start` instead.)
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## Debug the App
+## ⭐ Support
 
-In the browser, you can directly debug the original TypeScript code, which is supplied via sourcemaps (need to be enabled in the browser's developer console if it does not work straight away). If the browser doesn't automatically jump to the TypeScript code when setting breakpoints, use e.g. `Ctrl`/`Cmd` + `P` in Chrome to open the `*.ts` file you want to debug.
+If you find this library helpful, please consider giving it a star on GitHub! ⭐
 
-## Build the App
+---
 
-### Unoptimized (but quick)
-
-Execute the following command to build the project and get an app that can be deployed:
-
-```sh
-npm run build
-```
-
-The result is placed into the `dist` folder. To start the generated package, just run
-
-```sh
-npm run start:dist
-```
-
-Note that `index.html` still loads the UI5 framework from the relative URL `resources/...`, which does not physically exist, but is only provided dynamically by the UI5 tooling. So for an actual deployment you should change this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local deployment of UI5.
-
-(When using yarn, do `yarn build` and `yarn start:dist` instead.)
-
-### Optimized
-
-For an optimized self-contained build (takes longer because the UI5 resources are built, too), do:
-
-```sh
-npm run build:opt
-```
-
-To start the generated package, again just run:
-
-```sh
-npm run start:dist
-```
-
-In this case, all UI5 framework resources are also available within the `dist` folder, so the folder can be deployed as-is to any static web server, without changing the bootstrap URL.
-
-With the self-contained build, the bootstrap URL in `index.html` has already been modified to load the newly created `sap-ui-custom.js` for bootstrapping, which contains all app resources as well as all needed UI5 JavaScript resources. Most UI5 resources inside the `dist` folder are for this reason actually **not** needed to run the app. Only the non-JS-files, like translation texts and CSS files, are used and must also be deployed. (Only when for some reason JS files are missing from the optimized self-contained bundle, they are also loaded separately.)
-
-(When using yarn, do `yarn build:opt` and `yarn start:dist` instead.)
-
-## Check the Code
-
-Do the following to run a TypeScript check:
-
-```sh
-npm run ts-typecheck
-```
-
-This checks the application code for any type errors (but will also complain in case of fundamental syntax issues which break the parsing).
-
-To lint the TypeScript code, do:
-
-```sh
-npm run lint
-```
-
-(Again, when using yarn, do `yarn ts-typecheck` and `yarn lint` instead.)
-
-## License
-
-This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+**Made with ❤️ for the SAP UI5 community**

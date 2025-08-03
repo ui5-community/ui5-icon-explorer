@@ -1,19 +1,31 @@
 {
 	"name": "de.kernich.icon.preview",
 	"version": "1.0.0",
-	"description": "UI5 Application: de.kernich.icon.preview",
+	"description": "Icon Explorer which extends ui5-fontawesome-lib",
 	"author": "Mario Kernich",
 	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mariokernich/ui5-icon-explorer.git"
+	},
+	"keywords": [
+		"ui5",
+		"fontawesome",
+		"icon",
+		"explorer"
+	],
 	"scripts": {
 		"clean": "rimraf dist coverage",
 		"build": "ui5 build --clean-dest",
+		"build-for-deploy": "ui5 build --clean-dest && mv dist/index-cdn.html dist/index.html",
 		"build:opt": "ui5 build self-contained --clean-dest --all",
 		"start": "ui5 serve --port 8080 -o index.html",
 		"check:ts": "tsc --noEmit",
-		"check:lint": "eslint src test",
+		"check:lint": "eslint webapp",
 		"check:ui5": "ui5lint",
 		"check:all": "npm run check:ts && npm run check:lint && npm run check:ui5",
-		"fix:lint": "eslint src test --fix"
+		"fix:lint": "eslint webapp --fix",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "latest",

@@ -10,16 +10,14 @@ export default tseslint.config(
 		languageOptions: {
 			globals: {
 				...globals.browser,
-				sap: "readonly"
+				sap: "readonly",
 			},
 			ecmaVersion: 2023,
 			parserOptions: {
 				project: true,
-				tsconfigRootDir: import.meta.dirname
-			}
-		}
-	},
-	{
-		ignores: ["eslint.config.mjs", "webapp/test/e2e/**"]
+				tsconfigRootDir: import.meta.dirname,
+			},
+		},
+		ignores: ["eslint.config.mjs", "commitlint.config.cjs"],
 	}
 );

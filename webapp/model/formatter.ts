@@ -8,4 +8,8 @@ export default class Formatter {
 		}
 		return collection;
 	}
+
+	public static formatFavIcon(fav: boolean): string {
+		return fav ? "sap-icon://fa-solid/star" : "sap-icon://fa-regular/star";
+	}
 }
