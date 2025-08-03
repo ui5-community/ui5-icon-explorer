@@ -1,4 +1,3 @@
-
 import IconPool from "sap/ui/core/IconPool";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import { Select$ChangeEvent } from "sap/m/Select";
@@ -67,7 +66,7 @@ export default class Main extends Controller {
 		const checkLibraryLoaded = async () => {
 			if (Lib.isLoaded("fontawesome.icons.lib") && IconPool.getIconCollectionNames().includes("fa-solid")) {
 				this.initData();
-				this.getView().setBusy(false);
+				
 			} else if (retries < maxRetries) {
 				await new Promise(resolve => setTimeout(resolve, retryDelay));
 				retries++;
@@ -77,6 +76,10 @@ export default class Main extends Controller {
 			}
 		};
 		void checkLibraryLoaded();
+	}
+
+	onUpdateFinished() {
+		this.getView().setBusy(false);
 	}
 
 	private initData(): void {

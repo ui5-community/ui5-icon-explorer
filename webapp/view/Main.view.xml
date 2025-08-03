@@ -22,6 +22,7 @@
 							}
 						}"
                         id="IdGridList"
+                        updateFinished=".onUpdateFinished"
                     >
                         <f:GridListItem
                             type="Active"
