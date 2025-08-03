@@ -8,7 +8,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![UI5](https://img.shields.io/badge/UI5-Latest-orange.svg)](https://sapui5.hana.ondemand.com/)
 
-> A powerful and modern icon explorer for SAPUI5 applications that extends the [ui5-icon-explorer](https://github.com/mariokernich/ui5-icon-explorer) with Font Awesome icons together with the built-in icons with the look and feel of the standard UI5 icon explorer of https://sapui5.hana.ondemand.com/sdk/iconExplorer.html.
+> A powerful and modern icon explorer for SAPUI5 applications that uses the [ui5-fontawesome-lib](https://github.com/mariokernich/ui5-fontawesome-lib) the extend the built-in icons with Font Awesome with an look and feel of the standard app https://sapui5.hana.ondemand.com/sdk/iconExplorer.html.
 
 ## ✨ Features
 
