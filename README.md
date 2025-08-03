@@ -15,10 +15,9 @@
 - 🔍 **Smart Search** - Find icons by name with instant results
 - 📋 **One-Click Copy** - Copy icon codes directly to clipboard
 - ⭐ **Favorites System** - Mark and organize your favorite icons
-- 🎨 **Theme Switching** - Toggle between light and dark themes
+- 🎨 **Theme Switching** - Toggle between light, dark and contrast themes
 - 📚 **Collection Filtering** - Filter by specific icon collections
 - 🔍 **Detailed View** - Comprehensive icon information and usage examples
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
 
 ## 🚀 Live Demo
 

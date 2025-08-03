@@ -12,6 +12,8 @@ import SidePanel from "sap/f/SidePanel";
 import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 import { Button$PressEvent } from "sap/m/Button";
+import Lib from "sap/ui/core/Lib";
+import MessageBox from "sap/m/MessageBox";
 
 type IconRecord = {
 	icon: string,
@@ -51,6 +53,29 @@ export default class Main extends Controller {
 	};
 
 	onInit(): void {
+		void this.initAsync();
+	}
+
+	private initAsync(): void {
+		const maxRetries = 20;
+		const retryDelay = 500;
+		let retries = 0;
+
+		const checkLibraryLoaded = async () => {
+			if (Lib.isLoaded("fontawesome.icons.lib")) {
+				this.initData();
+			} else if (retries < maxRetries) {
+				await new Promise(resolve => setTimeout(resolve, retryDelay));
+				retries++;
+				await checkLibraryLoaded();
+			} else {
+				MessageBox.error("fontawesome.icons.lib not loaded");
+			}
+		};
+		void checkLibraryLoaded();
+	}
+
+	private initData(): void {
 		const viewData = new JSONModel(this.viewData);
 		this.getView().setModel(viewData, "viewData");
 
