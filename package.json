@@ -1,6 +1,6 @@
 {
 	"name": "de.kernich.icon.preview",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Icon Explorer which extends ui5-fontawesome-lib",
 	"author": "Mario Kernich",
 	"license": "Apache-2.0",
