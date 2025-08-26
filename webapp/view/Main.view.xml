@@ -28,6 +28,9 @@
                         id="IdGridList"
                         updateFinished=".onUpdateFinished"
                         noDataText="No icons found"
+                        growing="true"
+                        growingThreshold="100"
+                        growingScrollToLoad="true"
                     >
                         <f:customLayout>
                             <grid:GridBasicLayout
