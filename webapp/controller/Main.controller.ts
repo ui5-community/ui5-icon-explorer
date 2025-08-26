@@ -13,6 +13,8 @@ import Controller from "sap/ui/core/mvc/Controller";
 import { Button$PressEvent } from "sap/m/Button";
 import Lib from "sap/ui/core/Lib";
 import MessageBox from "sap/m/MessageBox";
+import GridList from "sap/f/GridList";
+import GridBasicLayout from "sap/ui/layout/cssgrid/GridBasicLayout";
 
 type IconRecord = {
 	icon: string,
@@ -53,6 +55,37 @@ export default class Main extends Controller {
 
 	onInit(): void {
 		void this.initAsync();
+
+		this.updateGridLayout();
+
+		window.addEventListener("resize", () => {
+			this.updateGridLayout();
+		});
+	}
+
+	private updateGridLayout(): void {
+		const gridList = this.getView().byId("IdGridList") as GridList;
+		if(window.innerWidth < 768) {
+			gridList.setCustomLayout(new GridBasicLayout({
+				gridTemplateColumns: "repeat(2, 1fr)",
+				gridGap: "0.5rem"
+			}));
+		} else if(window.innerWidth < 1280) {
+			gridList.setCustomLayout(new GridBasicLayout({
+				gridTemplateColumns: "repeat(5, 1fr)",
+				gridGap: "0.5rem"
+			}));
+		} else if(window.innerWidth < 1536) {
+			gridList.setCustomLayout(new GridBasicLayout({
+				gridTemplateColumns: "repeat(6, 1fr)",
+				gridGap: "0.5rem"
+			}));
+		} else {
+			gridList.setCustomLayout(new GridBasicLayout({
+				gridTemplateColumns: "repeat(7, 1fr)",
+				gridGap: "0.5rem"
+			}));
+		}
 	}
 
 	private initAsync(): void {
