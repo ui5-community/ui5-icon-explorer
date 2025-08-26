@@ -13,7 +13,6 @@ import Controller from "sap/ui/core/mvc/Controller";
 import { Button$PressEvent } from "sap/m/Button";
 import Lib from "sap/ui/core/Lib";
 import MessageBox from "sap/m/MessageBox";
-import SearchField from "sap/m/SearchField";
 
 type IconRecord = {
 	icon: string,
