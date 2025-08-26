@@ -19,7 +19,7 @@
 		"build": "ui5 build --clean-dest",
 		"build-for-deploy": "ui5 build --clean-dest && mv dist/index-cdn.html dist/index.html",
 		"build:opt": "ui5 build self-contained --clean-dest --all",
-		"start": "ui5 serve --port 8080 -o index.html",
+		"start": "ui5 serve --port 8082 -o index.html",
 		"check:ts": "tsc --noEmit",
 		"check:lint": "eslint webapp",
 		"check:ui5": "ui5lint",
