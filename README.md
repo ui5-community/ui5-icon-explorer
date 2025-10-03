@@ -21,7 +21,7 @@
 
 ## 🚀 Live Demo
 
-**[Try it online →](https://ie.kernich.de)**
+**[Try it online →](https://ui5-community.github.io/ui5-icon-explorer/)**
 
 ![Screenshot](./screenshot.png)
 
