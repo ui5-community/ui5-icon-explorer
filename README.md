@@ -1,14 +1,14 @@
 # 🎨 UI5 Icon Explorer
 
-[![Build app](https://github.com/mariokernich/ui5-icon-explorer/workflows/Build%20app/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22Build+app%22)
-[![ESLint check](https://github.com/mariokernich/ui5-icon-explorer/workflows/ESLint%20check/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22ESLint+check%22)
-[![TypeScript check](https://github.com/mariokernich/ui5-icon-explorer/workflows/TypeScript%20check/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22TypeScript+check%22)
-[![UI5 Lint](https://github.com/mariokernich/ui5-icon-explorer/workflows/UI5%20Lint%20check/badge.svg)](https://github.com/mariokernich/ui5-icon-explorer/actions?query=workflow%3A%22UI5+Lint%22)
+[![Build app](https://github.com/ui5-community/ui5-icon-explorer/workflows/Build%20app/badge.svg)](https://github.com/ui5-community/ui5-icon-explorer/actions?query=workflow%3A%22Build+app%22)
+[![ESLint check](https://github.com/ui5-community/ui5-icon-explorer/workflows/ESLint%20check/badge.svg)](https://github.com/ui5-community/ui5-icon-explorer/actions?query=workflow%3A%22ESLint+check%22)
+[![TypeScript check](https://github.com/ui5-community/ui5-icon-explorer/workflows/TypeScript%20check/badge.svg)](https://github.com/ui5-community/ui5-icon-explorer/actions?query=workflow%3A%22TypeScript+check%22)
+[![UI5 Lint](https://github.com/ui5-community/ui5-icon-explorer/workflows/UI5%20Lint%20check/badge.svg)](https://github.com/ui5-community/ui5-icon-explorer/actions?query=workflow%3A%22UI5+Lint%22)
 [![Font Awesome](https://img.shields.io/badge/FontAwesome-7.0.0-blue.svg)](https://fontawesome.com/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![UI5](https://img.shields.io/badge/UI5-Latest-orange.svg)](https://sapui5.hana.ondemand.com/)
 
-> A powerful and modern icon explorer for SAPUI5 applications that uses the [ui5-fontawesome-lib](https://github.com/mariokernich/ui5-fontawesome-lib) the extend the built-in icons with Font Awesome with an look and feel of the standard app https://sapui5.hana.ondemand.com/sdk/iconExplorer.html.
+> A powerful and modern icon explorer for SAPUI5 applications that uses the [ui5-fontawesome-lib](https://github.com/ui5-community/ui5-fontawesome-lib) the extend the built-in icons with Font Awesome with an look and feel of the standard app https://sapui5.hana.ondemand.com/sdk/iconExplorer.html.
 
 ## ✨ Features
 
