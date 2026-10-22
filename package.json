@@ -47,6 +47,6 @@
 		"ui5-tooling-transpile": "latest"
 	},
 	"dependencies": {
-		"ui5-fontawesome-lib": "^1.0.0"
+		"ui5-fontawesome-lib": "^1.1.0"
 	}
 }
