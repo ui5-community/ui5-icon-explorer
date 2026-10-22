@@ -30,7 +30,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "latest",
 		"@commitlint/config-conventional": "latest",
-		"@openui5/types": "^1.138.0",
+		"@openui5/types": "^1.153.0",
 		"@ui5/cli": "latest",
 		"@ui5/linter": "latest",
 		"eslint": "^9.12.0",
